@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-versions=("7.4" "8.0" "8.1")
+versions=("7.1" "7.4" "8.0" "8.1")
 variants=("cli" "fpm")
+composer=("2.2" "2.3" "2.3" "2.3")
 
 function build {
     for v in ${!versions[@]}; do
@@ -9,6 +10,7 @@ function build {
             docker build \
                 --build-arg PHP_VERSION=${versions[$v]} \
                 --build-arg PHP_VARIANT=${variants[$i]} \
+                --build-arg COMPOSER_VERSION=${composer[$v]} \
                 -t eseath/php:${versions[$v]}-${variants[$i]}-alpine .
         done
     done
