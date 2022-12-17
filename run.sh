@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-versions=("7.1" "7.2" "7.3" "7.4" "8.0" "8.1")
+versions=("7.1" "7.2" "7.3" "7.4" "8.0" "8.1", "8.2")
 variants=("cli" "fpm")
-composer=("2.2" "2.3" "2.3" "2.3" "2.3" "2.3")
+composer=("2.2" "2.3" "2.3" "2.3" "2.3" "2.3", "2.4")
 
 function build {
     for v in ${!versions[@]}; do
